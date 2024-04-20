@@ -19,7 +19,7 @@ function Home() {
     if (randomNumber === 2) {
       setShowDino(true);
     } else {
-      window.location.href = 'https://twitter.com';
+      window.location.href = 'https://x.com/vertigoprotocol?t=YAHMc0PyXg1CFHX9R-FEBA&s=08';
     }
   };
 
@@ -28,13 +28,14 @@ function Home() {
   };
 
   function handleID() {
+    setShowDino(false)
     setClick(true);
     setMessage('Wallet ID Submitted!');
     setTimeout(() => {
       setMessage('');
-    }, 2000); // Clear the message after 3 seconds
+    }, 2000); // Clear the message after 2 seconds
   }
-
+  
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
@@ -49,34 +50,42 @@ function Home() {
 
   return (
     <div className={click && showDino ? 'hactive' : 'Home'} >
-      {windowWidth <= 100 && (
+      {windowWidth <= 1000 && (
         <>
           <h1 className="desktop-warning" style={{color:'white'}}>Please use a desktop for optimal experience</h1>
           <div className="background-blur" />
         </>
       )}
-      <h1 className={click && showDino ? 'active' : 'headline'}>COMING SOON</h1>
+   
       <div className={click && showDino ? 'active' : 'logo'}>
-        <img className='imgg' src={require('./logo.png')} alt="Logo" />
-        <h1 className='verti'>vertigo.</h1>
+        <img className='logoImg' src={require('./logo.png')} alt="Logo" />
+        <h1 className='logoFont'>vertigo.</h1>
       </div>
       <div className={click && showDino ? 'active' : 'links'}>
-        <FaTelegram className='logo1' />
-        <FaMediumM className='logo1' />
-        <FaXTwitter onClick={handleClick} className='logo1' />
-        <FaDiscord className='logo1' />
+        <FaTelegram size={22} className='logo1' />
+        <FaMediumM size={22} className='logo1' />
+        <FaXTwitter size={22} onClick={handleClick} className='logo1' />
+        <FaDiscord size={22} className='logo1' />
       </div>
-      <input 
+      <div className={click && showDino ? 'active' :"walletSub"}>
+        <input type="text" placeholder='enter your wallet for nothing' onChange={(e)=>{setWalletId(e.target.value)}} />
+        <button onClick={handleID} className={click && showDino ? 'active' : 'submitButton'}  >SUBMIT</button>
+      </div>
+
+      {/* <input 
         type="text" 
         className={click && showDino ? 'active' : 'inp'}
         placeholder="Enter Wallet Id" 
         value={walletId} 
         onChange={handleWalletIdChange} 
       />
-      <MdDownloadDone onClick={handleID} size={24} className={click && showDino ? 'active' : 'icons'} />
+      <MdDownloadDone onClick={handleID} size={24} className={click && showDino ? 'active' : 'icons'} /> */}
 
-      {message && <p className={!click   ? 'active' : 'message'}>{message}</p>}
-      {click && showDino && <Dino walletId={walletId}/>}
+
+      <div className='messagediv'>
+      {message && <p className={!click ? 'active' : 'message'}>{message}</p>}
+      </div>
+      { click && showDino && <Dino walletId={walletId}/>}
     </div>
   );
 }
