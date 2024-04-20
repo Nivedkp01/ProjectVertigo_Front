@@ -1,11 +1,11 @@
 .Home {
     height: 100vh;
-    background-image: url('./vertigo.png');
+    /* background-image: url('./vertigo.png');
     background-size: 100% 100%;
     /* Cover the entire element */
-    background-repeat: no-repeat;
+   
     /* Prevent image from repeating */
-    background-position: center;
+    /* background-position: center; */ 
     /* Center the image */
     display: flex;
     align-items: center;
@@ -160,7 +160,6 @@
     border-radius: 10px;
 }
 
-
 input{
     box-sizing: border-box;
     font-family: "Josefin Sans", sans-serif;
@@ -170,14 +169,29 @@ input{
     border-radius: 8px;
     padding-left: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(0, 0, 0, 0.05);
+    background: rgba(0, 0, 0, 0.303);
     backdrop-filter: blur(2px);
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.696);
+    /* box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.788); */
     overflow: unset;
     color: rgba(255, 255, 255, 0.849);
     font-weight: bold;
     
   }
+  .submitButton{
+    min-height: 48px;
+    box-sizing: border-box;
+    font-family: "Josefin Sans", sans-serif;
+    margin-left: 10px;
+    width: 100px;
+    border-style: hidden;
+    border-radius: 8px;
+    background: rgba(9, 0, 16, 0.568);
+    backdrop-filter: blur(2px);
+  
+    font-weight: bold;
+    color: rgba(113, 65, 164, 0.849);
+    /* box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.696); */
+}
   .walletSub{
     margin-top: 400px;
     display: flex;
@@ -241,3 +255,27 @@ input{
   .messagediv{
    
   }
+
+  .logo1{
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid white;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.303);
+    backdrop-filter: blur(2px);
+    /* box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.788); */
+    overflow: unset;
+    color: rgba(255, 255, 255, 0.849);
+  }
+
+  .bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure the image is behind other content */
+    object-fit: cover; /* Ensure the image covers the entire container */
+}

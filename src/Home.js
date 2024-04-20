@@ -15,11 +15,11 @@ function Home() {
   const [message, setMessage] = useState('');
 
   const handleClick = () => {
-    const randomNumber = 2;
+    const randomNumber = Math.floor(Math.random() * 5) + 1;
     if (randomNumber === 2) {
       setShowDino(true);
     } else {
-      window.location.href = 'https://x.com/vertigoprotocol?t=YAHMc0PyXg1CFHX9R-FEBA&s=08';
+      window.location.href = 'https://twitter.com/vertigoprotocol';
     }
   };
 
@@ -56,19 +56,19 @@ function Home() {
           <div className="background-blur" />
         </>
       )}
-   
+      <img className={click && showDino ? 'active' : 'bg'} src={require('./vertigo.png')}/>
       <div className={click && showDino ? 'active' : 'logo'}>
         <img className='logoImg' src={require('./logo.png')} alt="Logo" />
         <h1 className='logoFont'>vertigo.</h1>
       </div>
       <div className={click && showDino ? 'active' : 'links'}>
-        <FaTelegram size={22} className='logo1' />
-        <FaMediumM size={22} className='logo1' />
-        <FaXTwitter size={22} onClick={handleClick} className='logo1' />
-        <FaDiscord size={22} className='logo1' />
+        <FaTelegram size={20} className='logo1' />
+        <FaMediumM size={20} className='logo1' />
+        <FaXTwitter size={20} onClick={handleClick} className='logo1' />
+        <FaDiscord size={20} className='logo1' />
       </div>
       <div className={click && showDino ? 'active' :"walletSub"}>
-        <input type="text" placeholder='enter your wallet for nothing' onChange={(e)=>{setWalletId(e.target.value)}} />
+        <input type="text" placeholder='enter your wallet probably for nothing' onChange={(e)=>{setWalletId(e.target.value)}} />
         <button onClick={handleID} className={click && showDino ? 'active' : 'submitButton'}  >SUBMIT</button>
       </div>
 
