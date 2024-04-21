@@ -60,7 +60,7 @@ function Dino({ walletId }) {
     }
 
     // Redirect to Twitter page
-    window.location.href = 'https://twitter.com';
+    window.location.href = 'https://twitter.com/vertigoprotocol';
   }
 
 
