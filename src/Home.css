@@ -134,6 +134,8 @@
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
     z-index: 999;
+    display: flex;
+    
 }
 
 .desktop-warning {
@@ -230,6 +232,9 @@ input{
 
 .desktop-warning{
     font-family: "Josefin Sans", sans-serif;
+    margin-top: -250px;
+    margin-left: -100px;
+    font-size: 20px;
 }
 
   .logosree{
@@ -279,3 +284,9 @@ input{
     z-index: -1; /* Ensure the image is behind other content */
     object-fit: cover; /* Ensure the image covers the entire container */
 }
+
+
+
+    
+        
+
